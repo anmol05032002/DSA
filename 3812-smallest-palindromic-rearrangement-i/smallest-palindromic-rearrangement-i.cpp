@@ -38,14 +38,9 @@ public:
 
         if(n%2)
        ans =  first_half + middle + rev;
-
        else
        ans = first_half + rev;
-
-
-       return ans;
-
-
+       
        return ans;
 
 
