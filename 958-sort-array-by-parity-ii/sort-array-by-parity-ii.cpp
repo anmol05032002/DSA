@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> sortArrayByParityII(vector<int>& nums) {
-        vector<int> ans;
+        // vector<int> ans;
         int n = nums.size();
 
         int i =0;
@@ -21,9 +21,9 @@ public:
             }
         }
 
-        for(auto i: nums){
-            ans.push_back(i);
-        }
+        // for(auto i: nums){
+        //     ans.push_back(i);
+        // }
         return nums;
     }
 };
