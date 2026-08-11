@@ -1,33 +1,34 @@
 class Solution {
 public:
 
-    void dfs(int currentRoom, vector<vector<int>>& rooms, vector<bool>& visited) {
-        // Mark the current room as visited
-        visited[currentRoom] = true;
 
-        // Grab all keys available in the current room
-        for (int key : rooms[currentRoom]) {
-            // If we haven't visited the room that this key unlocks, go visit it
-            if (!visited[key]) {
-                dfs(key, rooms, visited);
-            }
+ void dfs(unordered_map<int,vector<int>>&adj,vector<bool> &vis, int src){
+    vis[src]= true;
+
+    for(int &v: adj[src]){
+        if(!vis[v]){
+            dfs(adj,vis,v);
         }
     }
- 
+ }
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
         int n = rooms.size();
-        vector<bool> visited(n, false);
 
-        // Start our depth-first exploration from Room 0
-        dfs(0, rooms, visited);
-
-        // If any room remains unvisited, return false
-        for (bool isVisited : visited) {
-            if (!isVisited) {
-                return false;
+        unordered_map<int,vector<int>>adj;
+        for(int i=0; i<n; i++){
+            for(int j = 0; j<rooms[i].size(); j++){
+                adj[i].push_back(rooms[i][j]);
             }
         }
+  
+        vector<bool> vis(n,false);
+          dfs(adj,vis,0);
 
-        return true;
+         for(int i=0; i<n; i++){
+          if(vis[i]==false){
+            return false;
+           }
+        }
+         return true;
     }
 };
