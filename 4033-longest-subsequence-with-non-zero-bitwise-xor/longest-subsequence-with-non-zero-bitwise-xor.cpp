@@ -18,7 +18,7 @@ public:
         for(int i=0; i<n; i++){
             xorr^=nums[i];
         }
-        set<int> s;
+        unordered_set<int> s;
        if(xorr!=0)return n;
 
        else if(xorr==0){
