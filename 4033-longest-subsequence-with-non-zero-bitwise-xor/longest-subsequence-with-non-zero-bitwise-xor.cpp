@@ -18,22 +18,45 @@ public:
         for(int i=0; i<n; i++){
             xorr^=nums[i];
         }
+
+        int count = 0;
+
+        for(int i=0; i<n; i++){
+            if(nums[i]!=0){
+                count++;
+            }
+        }
         unordered_set<int> s;
-       if(xorr!=0)return n;
+    //    if(xorr!=0)return n;
 
-       else if(xorr==0){
+    //    else if(xorr==0){
         
-            for(auto i:nums){
-            s.insert(i);  
-              }
-       }
+    //         for(auto i:nums){
+    //         s.insert(i);  
+    //           }
+    //    }
 
-        if(s.size()!=1 || (s.size()==1 && non_zero)){
-                return n-1;
-            }
-            else {
-                return 0;
-            }
+        // if(s.size()!=1 || (s.size()==1 && non_zero)){
+        //         return n-1;
+        //     }
+        //     else {
+        //         return 0;
+        //     }
+
+
+
+
+     if(xorr!=0){
+        return n;
+     }
+
+     else if(count==0){
+        return 0;
+     }
+     else{
+        return n-1;
+     }
+
         
     }
 };
