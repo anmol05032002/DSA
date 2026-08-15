@@ -4,7 +4,7 @@ public:
         int n = nums.size();
 
         int xorr = 0;
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
 
         bool non_zero = false;
 
