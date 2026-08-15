@@ -6,6 +6,15 @@ public:
         int xorr = 0;
         sort(nums.begin(),nums.end());
 
+        bool non_zero = false;
+
+        for(int i=0; i<n; i++){
+          if(nums[i]!=0){
+            non_zero = true;
+            break;
+          }
+        }
+
         for(int i=0; i<n; i++){
             xorr^=nums[i];
         }
@@ -19,7 +28,7 @@ public:
               }
        }
 
-        if(s.size()!=1 || (s.size()==1 && nums[0]!=0)){
+        if(s.size()!=1 || (s.size()==1 && non_zero)){
                 return n-1;
             }
             else {
