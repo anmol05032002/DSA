@@ -11,17 +11,15 @@ public:
             mp[arr[i]]++;
         }
         if(mp.size()==1 && mp[0]==0)return false;
-        if(mp.size()==1 && mp[0]!=0 && mp[0]%2==0)return true;
+        if(mp[0]%2!=0)return false;
         for(int i = 1; i<=k/2; i++){
-            if(mp[0]%2){
-                return false;
-            }
-            if(i == k-i && mp[i]%2!=0)return false;
-            if(mp[i]>0){
-                if(mp.find(k-i)==mp.end() || mp[i]!=mp[k-i]){
-                    return false;
-                }
-            }
+            // if(i == k-i && mp[i]%2!=0)return false;
+            // if(mp[i]>0){
+            //     if(mp.find(k-i)==mp.end() || mp[i]!=mp[k-i]){
+            //         return false;
+            //     }
+            // }
+            if(mp[i]!=mp[k-i])return false;
         } 
         
         return true;
