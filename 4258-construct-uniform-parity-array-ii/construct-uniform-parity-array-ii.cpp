@@ -55,6 +55,7 @@ public:
         for (int i = 0; i < n; i++) {
             if (nums1[i] % 2 == 0 && (nums1[i] - smallest_odd) < 1) {
                 odd_possible = false;
+                break;
             }
         }
 
@@ -65,6 +66,7 @@ public:
         for (int i = 0; i < n; i++) {
             if (nums1[i] % 2 != 0 && (nums1[i] - smallest_odd) < 1) {
                 even_possible = false;
+                break;
             }
         }
 
