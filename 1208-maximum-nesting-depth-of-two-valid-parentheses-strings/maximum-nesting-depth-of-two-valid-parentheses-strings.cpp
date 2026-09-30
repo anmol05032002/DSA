@@ -1,11 +1,22 @@
 class Solution {
 public:
-    vector<int> maxDepthAfterSplit(auto s) {
-        int n = s.size(); vector<int> res(n);
-        
-        for (int i = 0; i < n; i++)
-            res[i] = (i ^ s[i]) & 1;
+    vector<int> maxDepthAfterSplit(string seq) {
+        vector<int> ans;
+        int n = seq.length();
 
-        return res;
+        vector<char> str;
+        int depth = 0;
+
+        for(int i =0; i<n; i++){
+            if(seq[i]=='('){
+                depth++;
+                ans.push_back(depth%2);
+            }
+            else{
+                ans.push_back(depth%2);
+                depth--;
+            }
+        }
+        return ans;
     }
 };
