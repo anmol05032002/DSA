@@ -9,12 +9,14 @@ public:
 
         for(int i =0; i<n; i++){
             if(seq[i]=='('){
-                depth++;
                 ans.push_back(depth%2);
+                depth++;
+                
             }
             else{
-                ans.push_back(depth%2);
                 depth--;
+                ans.push_back(depth%2);
+                
             }
         }
         return ans;
